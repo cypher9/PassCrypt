@@ -3,7 +3,9 @@ Created on 08.06.2016
 
 @author: cypher9
 '''
-import base64, hashlib, getpass
+import base64
+import hashlib
+import getpass
 from Crypto.Cipher import AES
 from Crypto.Random import random
 
