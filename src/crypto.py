@@ -10,7 +10,7 @@ from Crypto.Cipher import AES
 from Crypto.Random import random
 
 
-BLOCK_SIZE = 32
+BLOCK_SIZE = 256
 PADDING = '{'
 pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
 KEY = None

@@ -28,6 +28,9 @@ def passcrypt():
             option = int(raw_input('Option: '))
             if option < 0 or option > 3:
                 print ("\n...not a valid input...\n")
+            elif option == 3:
+                options[option]()
+                function.save_entry_list()
             else:
                 options[option]()
         except ValueError:
