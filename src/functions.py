@@ -42,7 +42,6 @@ class Functions(object):
 
     def save_entry_list(self):
         create_xml(self.pass_entry_list)
-        print "\nEntry saved...\n"
 
     def add_new_entry(self):
         print("\nAdd your new entry...\n")
@@ -53,6 +52,7 @@ class Functions(object):
 
         self.pass_entry_list.append(make_entry(entry_name, url, username, password))
         self.save_entry_list()
+        print "\nEntry saved...\n"
 
     def quit(self):
         sys.exit(0)
