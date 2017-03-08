@@ -29,7 +29,7 @@ def get_password():
 def set_password():
     global KEY
     not_matching = True
-    print("\nSet new password for PyPlanner!\n(Password must be at least 5 characters!)")
+    print("\nSet new password\n(Password must be at least 5 characters!)")
     while not_matching:
         password = get_password()
         if len(password) < 5:
