@@ -42,6 +42,7 @@ def set_password():
                 not_matching = False
             else:
                 print("passwords not matching")
+    print "\nNew password saved...\n"
 
 
 def change_password():
