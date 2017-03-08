@@ -1,7 +1,7 @@
 from os.path import isfile
 from src.info import Info
 from src.functions import Functions
-from src.crypto import set_password
+from src.crypto import set_password, change_password
 from src.xml_func import write_xml
 
 
@@ -17,7 +17,8 @@ def passcrypt():
 
     options = {1: function.add_new_entry,
                2: function.show_entries,
-               3: info.help,
+               3: change_password,
+               4: info.help,
                0: function.quit
                }
 
