@@ -1,6 +1,8 @@
 from os.path import isfile
 from src.info import Info
 from src.functions import Functions
+from src.crypto import set_password
+from src.xml_func import write_xml
 
 
 if __name__ == '__main__':
@@ -9,6 +11,9 @@ if __name__ == '__main__':
     function = Functions()
     if isfile('passcrypt.enc'):
         function.xml_to_pass()
+    else:
+        set_password()
+        write_xml("")
 
     options = {1: function.add_new_entry,
                2: function.show_entries,

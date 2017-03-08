@@ -1,10 +1,11 @@
 import xml.etree.ElementTree as ET
 from _elementtree import tostring
+from src.crypto import encryption, decryption
 
 
 def write_xml(xml_doc):
     xmlfile = open('passcrypt.enc', 'w')
-    xmlfile.write(xml_doc)
+    xmlfile.write(encryption(xml_doc))
     xmlfile.close()
 
 
@@ -15,7 +16,7 @@ def read_xml():
 
 
 def get_root():
-    return ET.fromstring(read_xml())
+    return ET.fromstring(decryption(read_xml()))
 
 
 def create_xml(entrylist=None):
