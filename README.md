@@ -1,2 +1,2 @@
 # PassCrypt
-Console Password Safe
+Commandline Password Safe
