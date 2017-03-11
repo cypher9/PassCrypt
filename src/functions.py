@@ -16,6 +16,7 @@ class Functions(object):
         print("URL: " + pass_entry.url)
         print("Username: " + pass_entry.username)
         print("Password: " + pass_entry.password)
+        print("Category: " + pass_entry.category)
         print("**************************")
 
     def show_entries(self):
@@ -34,8 +35,9 @@ class Functions(object):
                     url = pass_entry.attrib['url']
                     username = pass_entry.attrib['username']
                     password = pass_entry.attrib['password']
+                    category = pass_entry.attrib['category']
 
-                    self.pass_entry_list.append(make_entry(entry_name, url, username, password))
+                    self.pass_entry_list.append(make_entry(entry_name, url, username, password, category))
         except:
             print "failed to read xml...\nYour password may be incorrect!\nRestart PassCrypt and try again!"
             self.quit()
@@ -49,8 +51,9 @@ class Functions(object):
         url = str(raw_input('URL: '))
         username = str(raw_input('Username: '))
         password = str(raw_input('Password: '))
+        category = str(raw_input('Category: '))
 
-        self.pass_entry_list.append(make_entry(entry_name, url, username, password))
+        self.pass_entry_list.append(make_entry(entry_name, url, username, password, category))
         self.save_entry_list()
         print "\nEntry saved...\n"
 

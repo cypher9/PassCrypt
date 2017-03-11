@@ -10,10 +10,12 @@ from Crypto.Cipher import AES
 from Crypto.Random import random
 
 
-BLOCK_SIZE = 256
+BLOCK_SIZE = 32
 PADDING = '{'
-pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
 KEY = None
+
+def padding(s):
+    return lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
 
 
 def generate_key(password):
@@ -56,7 +58,7 @@ def change_password():
 def encryption(privateInfo):
     global KEY
     iv = ''.join(chr(random.randint(0, 0xFF)) for i in range(16)) 
-    EncodeAES = lambda c, s: base64.b64encode(c.encrypt(pad(s)))
+    EncodeAES = lambda c, s: base64.b64encode(c.encrypt(padding(s)))
     if KEY:
         key = KEY
     else:
